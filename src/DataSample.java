@@ -21,7 +21,10 @@ public class DataSample {
 	
 	@Override
 	public String toString() {
-		return "timeStamp=" + timeStamp + " samplesCount=" + samplesCount + " sampleIds=" + sampleIds + " sampleData=" + samplesData;
+		return "timeStamp=" + timeStamp + 
+				" samplesCount=" + samplesCount + 
+				" sampleIds=" + sampleIds + 
+				" sampleData=" + samplesData;
 		
 	}
 }

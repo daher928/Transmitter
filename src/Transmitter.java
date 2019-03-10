@@ -6,12 +6,13 @@ public class Transmitter {
 	
 	static String fileName = "MW_samples_original_0001613_20181114_1754.txt";
 	static String SOH = String.valueOf((char)1);
-	//GIT TEST GIT TEST
+	
 	public static DataSample parseLine(String fullLine) {
 		String line = ((String[])fullLine.split(" "))[1];
 		String[] lineSamples = line.split(SOH);
 		int samplesCount = lineSamples.length;
 		int timeStamp;
+		String sampleId;
 		DataSample dataSample = new DataSample();
 		
 		for (int i=0; i<samplesCount; i++) {
