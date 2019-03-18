@@ -7,8 +7,8 @@ import java.net.UnknownHostException;
 
 public class Transmitter {
 	
-//	static final String fileName = "MW_samples_original_0001613_20181114_1754.txt";
-	static final String fileName = "short.txt";
+	static final String fileName = "MW_samples_original_0001613_20181114_1754.txt";
+//	static final String fileName = "short.txt";
 	static final String SOH = String.valueOf((char)1);
 	static final String androidId = "192.168.43.156";
 	static final int port = 9191;
@@ -74,12 +74,12 @@ public class Transmitter {
 
 			String line;
 			while ((line = br.readLine()) != null) {
-				Thread.sleep(1000);
 				if(line.equals("Start DATA")){
 					startData = true;
 					continue;
 				}
 				if(startData) {
+					Thread.sleep(100);
 					assert(line.contains(SOH));
 					DataSample ds = parseLine(line);
 //					System.out.println(parseLine(line));
